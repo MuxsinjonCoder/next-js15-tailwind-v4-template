@@ -49,7 +49,6 @@ export default function DashboardNumbers() {
           custom={index}
           initial="hidden"
           animate="visible"
-          variants={fadeUp}
           whileHover={{ scale: 1.03 }}
           className="transition-transform"
         >

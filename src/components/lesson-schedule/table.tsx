@@ -195,11 +195,11 @@ export default function LessonScheduleTable() {
         useCORS: true,
         allowTaint: true,
         logging: false,
-        ignoreElements: (element) => {
+        ignoreElements: (element: any) => {
           // Skip elements that might cause OKLCH parsing issues
           return element.tagName === "STYLE" || element.tagName === "LINK";
         },
-        onclone: (clonedDoc) => {
+        onclone: (clonedDoc: any) => {
           // Remove CSS custom properties that use OKLCH
           const style = clonedDoc.createElement("style");
           style.textContent = `
@@ -238,7 +238,7 @@ export default function LessonScheduleTable() {
       });
 
       // Convert canvas to blob
-      canvas.toBlob((blob) => {
+      canvas.toBlob((blob: Blob | null) => {
         if (!blob) return;
 
         // Create download link
